@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie testowe</title>
+    <link rel="stylesheet" href="dist/css/main.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+
+            <li class="menu-item" onclick="toggleSubMenu('submenu-makijaz', 'arrow-makijaz')">
+                <a href="#makijaz" title="Makijaż">Makijaż</a>
+                <span class="arrow" id="arrow-makijaz"></span>
+                
+                <ul class="submenu" id="submenu-makijaz">
+                  <li><a href="#test" title="Test 1">Test 1</a></li>
+                  <li><a href="#test2" title="Test 2">Test 2</a></li>
+                </ul>
+              </li>
+
+
+            <li class="menu-item" onclick="toggleSubMenu('submenu-twarz', 'arrow-twarz')" >
+                <a href="#twarz" title="Twarz" >Twarz</a>
+                <span class="arrow" id="arrow-twarz"></span>
+
+                <ul class="submenu" id="submenu-twarz">
+
+                    <li>
+                        <a class="category" href="#kremy" title="Kremy">Kremy</a>
+                        <ul>
+                            <li>
+                                <a href="#kremy-nawilzajace" title="Kremy nawilżające">Kremy nawilżające</a>
+                            </li>
+                            <li>
+                                <a href="#kremy-odżywcze" title="Kremy odżywcze">Kremy odżywcze</a>
+                            </li>
+                            <li>
+                                <a href="#kremy-na-przebarwienia" title="Kremy na przebarwienia">Kremy na przebarwienia</a>
+                            </li>
+                            <li>
+                                <a href="#kremy-przeciwzmarszczkowe" title="Kremy przeciwzmarszczkowe">Kremy przeciwzmarszczkowe</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a class="category" href="#serum" title="Serum">Serum</a>
+                        <ul>
+                            <li>
+                                <a href="#serum-nawilzajace" title="Serum nawilżające">Serum nawilżające</a>
+                            </li>
+                            <li>
+                                <a href="#serum-odżywcze" title="Serum odżywcze">Serum odżywcze</a>
+                            </li>
+                            <li>
+                                <a href="#serum-na-przebarwienia" title="Serum na przebarwienia">Serum na przebarwienia</a>
+                            </li>
+                            <li>
+                                <a href="#serum-przeciwzmarszczkowe" title="Serum przeciwzmarszczkowe">Serum przeciwzmarszczkowe</a>
+                            </li>
+                            <li>
+                                <a href="#serum-olejowe" title="Serum olejowe">Serum olejowe</a>
+                            </li>
+                            <li>
+                                <a href="#serum-antyoksydacyjne" title="Serum antyoksydacyjne">Serum antyoksydacyjne</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a class="category" href="#serum" title="Oczyszczanie twarzy">Oczyszczanie twarzy</a>
+                        <ul>
+                            <li>
+                                <a href="#zele" title="Żele do mycia twarzy">Żele do mycia twarzy</a>
+                            </li>
+                            <li>
+                                <a href="#pianki" title="Pianki do mycia twarzy">Pianki do mycia twarzy</a>
+                            </li>
+                            <li>
+                                <a href="#emulsje" title="Emulsje do mycia twarzy">Emulsje do mycia twarzy</a>
+                            </li>
+                            <li>
+                                <a href="#mydla" title="Mydła do twarzy">Mydła do twarzy</a>
+                            </li>
+                        </ul>
+                    </li> 
+                
+                </ul>
+            </li>
+            
+            <li class="menu-item" >
+                <a href="#cialo" title="Ciało">Ciało</a>
+            </li>
+
+            <li class="menu-item" >
+                <a href="#wlosy" title="Włosy">Włosy</a>
+            </li>
+
+            <li class="menu-item" >
+                <a href="#pielegnacja" title="Pielęgnacja">Pielęgnacja</a>
+            </li>
+
+            <li class="menu-item"  >
+                <a href="#dom" title="dom">Dom</a>
+            </li>
+
+      
+            <li class="sale"  >
+                <a href="#promocje" class="btn" title="Promocje">PROMOCJE</a>
+            </li>
+        </ul>
+ 
+        
+    </nav>
+    
+
+    <div id="Search">
+
+        <div id="search-container">
+            
+            <input type="text" id="search-input" placeholder="Search">
+            <img src="./src/img/iconamoon_search-light.png" alt="search" id="search-icon">
+            <img src="./src/img/ph_spinner.png" alt="loader" id="loading-icon">
+            
+
+            <div id="text" >
+                Search
+            </div>
+
+            <div id="search-results">              
+            </div>
+
+        </div>  
+  
+
+    </div>
+
+    <div id="terminal">
+        <div class="terminal-body">         
+          <div class="header">
+            <div class="circles">
+              <div class="circle red"></div>
+              <div class="circle yellow"></div>
+              <div class="circle green"></div>
+            </div>
+            <p>webjaksklep</p>
+          </div>
+          <div id="my-terminal">
+            <div id="lastLoginText" class="last-login"></div>
+          </div>
+          <input type="text" id="commandInput">
+          <div id="commandHint" class="command-hint"></div>
+        </div>
+    </div>
+      
+
+    <script src="dist/js/script.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+$menu-bg: #F4F4F4;
+$gray: #333333;
+$black: #000000;
+$red: #FF4242;
+$white: #FFFFFF;
+$border-color: #D1D1D1;
+$placeholder-color: #8D8D8D;  
+$placeholder-color2 : #A1A1A1;
+$result-bg: #F4F4F4;
+
+//terminal
+$red-bg: #E52A2A;
+$yellow-bg: #E5BC2A;
+$green-bg: #2AE53D;
+$gray-bg: #3E3E3E;
+$terminal-bg: #131212;
+
+
+
+$radius-5: 5px;
+
+
+nav{
+    background-color: $menu-bg;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px; /* Grubość border bottom */
+        background: linear-gradient(
+          to left, 
+          #FF0000 0%, 
+          #FF8A00 15%, 
+          #DBF72C 25%, 
+          #00FF57 35%, 
+          #00B2FF 50%, 
+          #0400D2 65%, 
+          #FA00FF 75%, 
+          #FF0000 100%
+        );
+      }
+
+      a {
+        text-decoration: none;    
+    }
+    
+    ul{
+        list-style: none;
+        width: 100%;
+    }
+    
+    ul{
+        display: flex;
+        position: relative;
+    
+        .sale{
+            position: absolute;
+            right: 0;
+        }
+    
+        .menu-item{      
+            padding: 10px;
+            font-family: 'Poppins', sans-serif;
+    
+            a{
+                position: relative;
+                font-size: 16px;
+               
+                color: $gray;
+                font-weight: 500;
+            }
+         
+         
+        }
+    
+    
+    }
+    
+    .submenu {    
+        color: $black;
+        display: none;
+        width: 100vw;
+        position: absolute;
+        left: -20px;
+        right: 0;
+        top: 80px;
+        background-color: $menu-bg;
+        padding: 20px;
+        gap: 45px;
+    
+    
+        ul{
+            flex-direction: column;
+            margin-top: 10px;
+        }
+    
+    
+      
+    
+        li{
+       
+            a{
+                font-size: 13px;
+                font-weight: 400;
+                font-family: 'Inter', sans-serif;
+                color: $black;
+    
+                &.category{
+                    font-size: 15px;
+                    font-weight: 500;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+    
+    
+    .submenu-visible {
+        display: flex;
+    }
+    
+    .arrow {
+        display: inline-block;
+        width: 16px;
+        height: 7px;
+        background-image: url('../img/formkit_down.png');
+        background-size: cover;
+        transition: transform 0.3s ease;
+        transform: rotate(-180deg);
+      }
+    
+      .arrow-up {
+        transform: rotate(0deg);
+      }
+    
+    .btn{
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        background-color: $red;
+        color: $white;
+        border-radius: $radius-5;
+        width: 118px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+
+
+
+#Search{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #search-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+  
+      input {
+        padding-right: 30px; 
+        border-radius: $radius-5;
+        padding-left: 10px;
+        width: 370px;
+        height: 60px;
+        border: 1px solid $border-color;
+        color: $gray;
+        font-size: 13px;
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+
+
+        &:focus-visible{
+          outline: none;
+        }
+      }
+
+      input::placeholder {
+        color: $placeholder-color;
+      }
+  
+      #loading-icon {
+        position: absolute;
+        right: 40px;
+        transform: translateY(-50%);
+        animation: spin 1s linear infinite; 
+        display: none; 
+      }
+
+      #search-icon{
+        position: absolute;
+        right: 10px;
+      }
+  
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+  
+      #search-results {
+        display: none;
+        margin-top: 10px;
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        top: 100%;
+
+        .results{
+          background-color: $result-bg;
+          border-radius: $radius-5;
+          padding: 10px;
+
+          .item{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0px;
+            p{
+              color: $black;
+              font-size: 13px;
+              font-weight: 400;
+              font-family: 'Inter', sans-serif;
+
+            }
+
+            &:not(:first-child) {
+                border-top: 1px solid $border-color; 
+          }
+          }     
+        }
+      }
+  
+   #text{
+    position: absolute;
+    left: 10px;
+    top: -12px;
+    display: none;
+    color: $placeholder-color2;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    background-color: $white;
+    padding: 5px;
+   }
+
+
+   #text.show-text {
+    display: block !important;
+  }
+  
+
+}
+
+
+
+
+#terminal{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  
+
+  .terminal-body{
+    width: 726px;
+    height: 374px;
+    border-radius: $radius-5;
+    background-color: $terminal-bg;
+
+    @media (max-width: 768px) { 
+      width: 80%;
+     }
+
+    .header{
+      background-color: $gray-bg;
+      border-top-left-radius: $radius-5;
+      border-top-right-radius: $radius-5;
+      padding: 5px 10px;
+      display: flex;
+      align-items: center;
+
+      p{
+        color: #C2C2C2;
+        font-weight: bold;
+        font-family: 'Inter', sans-serif;
+        font-size: 11px; 
+        margin: 0 auto;
+      }
+      
+      .circles{
+        .circle {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          display: inline-block;
+
+          &.red {          
+            background-color: $red-bg;
+          }
+          
+          &.yellow {
+           background-color: $yellow-bg ;
+          }
+          
+          &.green {
+           background-color: $green-bg;
+          }    
+        }
+      }
+    }
+
+    #my-terminal {
+      width: 90%;
+      padding: 20px 0px;
+      height: 60%;
+      overflow-y: auto;
+      position: relative;
+      margin: 0 auto;
+      color: $white;
+    }
+
+    #commandInput {
+      width: 90%;
+      height: 40px;
+      margin: 10px auto;
+      padding: 5px;
+      border-radius: $radius-5;
+      display: block;
+      border: none;
+      background-color: $gray-bg;
+      color: $white;
+
+      &::placeholder{
+        color: #D9D9D9;
+      }
+
+      &:focus-visible{
+        outline: none;
+      }
+    }
+
+    .command-hint {
+      color: white;
+      background-color: #333;
+      padding: 10px;
+      width: 90%;
+      margin: 10px auto;
+      border-radius: $radius-5;
+      display: none;
+    }
+    
+    .command-history {
+      color: #888;
+      margin-bottom: 5px;
+    }
+
+ 
+
+  }
+  
+  
+ 
+  
+
+}
